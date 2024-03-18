@@ -1,0 +1,94 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+format = """
+$time\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$env_var\
+$crystal\
+$cmd_duration\
+$custom\
+$line_break\
+$jobs\
+$battery\
+$status\
+$username\
+$hostname\
+$character"""
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol="[💣](bold red)"
+
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[directory]
+truncation_length = 6
+# truncation_symbol = "…"
+truncate_to_repo = false
+
+[directory.substitutions]
+"/workspace/" = "💼 "
+
+[gcloud]
+disabled = true
+
+[git_status]
+disabled = true
+format = "[$all_status$ahead_behind]($style) "
+stashed = "💰"
+untracked = "🔍"
+
+[username]
+disabled = false
+show_always = true
+format = "[$user]($style)@"
+
+[hostname]
+ssh_only = false
+format = "[$(hostname | sed 's/quizlet-quizlet[^-]*-//')]($style) "
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "dark grey"
