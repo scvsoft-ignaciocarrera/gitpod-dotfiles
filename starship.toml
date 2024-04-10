@@ -86,7 +86,7 @@ format = "[$user]($style)@"
 
 [hostname]
 ssh_only = false
-format = "[$(hostname | sed 's/quizlet-quizlet[^-]*-//')]($style) "
+format = "[$(hostname)]($style) "
 
 [time]
 disabled = false
